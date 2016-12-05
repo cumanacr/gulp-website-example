@@ -5,12 +5,12 @@ var uglify = require('gulp-uglify');
 var SCRIPTS_PATH = 'public/scripts/**/*.js';
 
 // Styles
-gulp.task('styles', function(){
+gulp.task('styles', function() {
     console.log('starting styles task');
 });
 
 // Scripts
-gulp.task('scripts', function(){
+gulp.task('scripts', function() {
     console.log('starting scripts task');
     return gulp.src(SCRIPTS_PATH)
         .pipe(uglify())
@@ -18,12 +18,12 @@ gulp.task('scripts', function(){
 });
 
 // Images
-gulp.task('images', function(){
+gulp.task('images', function() {
     console.log('starting images task');
 });
 
 // Default
-gulp.task('default', function(){
+gulp.task('default', function() {
     console.log('starting default task');
 });
 
