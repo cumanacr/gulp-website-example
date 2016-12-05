@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var livereload = require('gulp-livereload');
 var concat = require('gulp-concat');
+var minifyCss = require('gulp-minify-css');
 
 // File paths
 var DIST_PATH = 'public/dist';
