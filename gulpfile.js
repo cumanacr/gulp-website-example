@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var uglify = require('gulp-uglify');
+var livereload = require('gulp-livereload');
 
 // File paths
 var SCRIPTS_PATH = 'public/scripts/**/*.js';
@@ -14,7 +15,8 @@ gulp.task('scripts', function() {
     console.log('starting scripts task');
     return gulp.src(SCRIPTS_PATH)
         .pipe(uglify())
-        .pipe(gulp.dest('public/dist'));
+        .pipe(gulp.dest('public/dist'))
+        .pipe(livereload());
 });
 
 // Images
@@ -31,5 +33,6 @@ gulp.task('default', function() {
 gulp.task('watch', function() {
     console.log('starting watch task');
     require('./server.js');
+    livereload.listen();
     gulp.watch(SCRIPTS_PATH, ['scripts']);
 });
