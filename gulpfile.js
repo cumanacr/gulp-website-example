@@ -14,7 +14,7 @@ var CSS_PATH ='public/css/**/*.css';
 gulp.task('styles', function() {
     console.log('starting styles task');
     return gulp.src(['public/css/reset.css', CSS_PATH])
-        .pipe(autoprefixer(/*{browsers: ['last 2 versions', 'ie 8']*/}))
+        .pipe(autoprefixer(/*{browsers: ['last 2 versions', 'ie 8']}*/))
         .pipe(concat('styles.css'))
         .pipe(minifyCss())
         .pipe(gulp.dest(DIST_PATH))
