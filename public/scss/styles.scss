@@ -1,5 +1,9 @@
+@import "./reset/basic-reset";
+
+$grey: #f7f7f7;
+
 body {
-	background: #f7f7f7;
+	background: $grey;
 	display: flex;
 	align-items: center;
 	justify-content: center;
