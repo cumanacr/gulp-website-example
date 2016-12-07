@@ -12,7 +12,7 @@ var sass = require('gulp-sass');
 var less = require('gulp-less');
 var LessAutoprefix = require('less-plugin-autoprefix');
 var lessAutoprefix = new LessAutoprefix({
-	browsers: ['last 2 versions']
+    browsers: ['last 2 versions']
 });
 
 // File paths
@@ -58,50 +58,57 @@ var CSS_PATH = 'public/css/**/*.css';
 // });
 
 // Styles For LESS
-gulp.task('styles', function () {
-	console.log('starting styles task');
-	return gulp.src('public/less/styles.less')
-		.pipe(plumber(function (err) {
-			console.log('Styles Task Error');
-			console.log(err);
-			this.emit('end');
-		}))
-		.pipe(sourcemaps.init())
-		.pipe(less({
-			plugins: [lessAutoprefix]
-		}))
-		.pipe(minifyCss())
-		.pipe(sourcemaps.write())
-		.pipe(gulp.dest(DIST_PATH))
-		.pipe(livereload());
+gulp.task('styles', function() {
+    console.log('starting styles task');
+    return gulp.src('public/less/styles.less')
+        .pipe(plumber(function(err) {
+            console.log('Styles Task Error');
+            console.log(err);
+            this.emit('end');
+        }))
+        .pipe(sourcemaps.init())
+        .pipe(less({
+            plugins: [lessAutoprefix]
+        }))
+        .pipe(minifyCss())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(DIST_PATH))
+        .pipe(livereload());
 });
 
 // Scripts
-gulp.task('scripts', function () {
-	console.log('starting scripts task');
+gulp.task('scripts', function() {
+    console.log('starting scripts task');
 
-	return gulp.src(SCRIPTS_PATH)
-		.pipe(uglify())
-		.pipe(concat('scripts.js'))
-		.pipe(gulp.dest(DIST_PATH))
-		.pipe(livereload());
+    return gulp.src(SCRIPTS_PATH)
+        .pipe(plumber(function(err) {
+            console.log('Scripts Task Error');
+            console.log(err)
+            this.emit('end');
+        }))
+        .pipe(sourcemaps.init())
+        .pipe(uglify())
+        .pipe(concat('scripts.js'))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(DIST_PATH))
+        .pipe(livereload());
 });
 
 // Images
-gulp.task('images', function () {
-	console.log('starting images task');
+gulp.task('images', function() {
+    console.log('starting images task');
 });
 
-gulp.task('default', function () {
-	console.log('Starting default task');
+gulp.task('default', function() {
+    console.log('Starting default task');
 });
 
-gulp.task('watch', function () {
-	console.log('Starting watch task');
-	require('./server.js');
-	livereload.listen();
-	gulp.watch(SCRIPTS_PATH, ['scripts']);
-	// gulp.watch(CSS_PATH, ['styles']);
-	// gulp.watch('public/scss/**/*.scss', ['styles']);
-	gulp.watch('public/less/**/*.less', ['styles']);
+gulp.task('watch', function() {
+    console.log('Starting watch task');
+    require('./server.js');
+    livereload.listen();
+    gulp.watch(SCRIPTS_PATH, ['scripts']);
+    // gulp.watch(CSS_PATH, ['styles']);
+    // gulp.watch('public/scss/**/*.scss', ['styles']);
+    gulp.watch('public/less/**/*.less', ['styles']);
 });

@@ -1,2 +1,3 @@
-var name="Andrew";document.write("Hello "+name+"!");
-for(var max=10,i=0;max>i;i++)console.log(i);
+var name="Cristian Umaña";document.write("Hello "+name+"!");
+for(var max=10,i=0;i<max;i++)console.log(i);
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1haW4uanMiLCJzZWNvbmRhcnktc2NyaXB0cy5qcyJdLCJuYW1lcyI6WyJuYW1lIiwiZG9jdW1lbnQiLCJ3cml0ZSIsIm1heCIsImkiLCJjb25zb2xlIiwibG9nIl0sIm1hcHBpbmdzIjoiQUFBQSxHQUFJQSxNQUFPLGdCQUVYQyxVQUFTQyxNQUFNLFNBQVdGLEtBQU87QUNBakMsSUFBSSxHQUZBRyxLQUFNLEdBRUZDLEVBQUksRUFBR0EsRUFBSUQsSUFBS0MsSUFDdkJDLFFBQVFDLElBQUlGIiwiZmlsZSI6InNjcmlwdHMuanMiLCJzb3VyY2VzQ29udGVudCI6WyJ2YXIgbmFtZSA9ICdDcmlzdGlhbiBVbWHDsWEnO1xuXG5kb2N1bWVudC53cml0ZSgnSGVsbG8gJyArIG5hbWUgKyAnIScpO1xuIiwidmFyIG1heCA9IDEwO1xuXG5mb3IodmFyIGkgPSAwOyBpIDwgbWF4OyBpKyspIHtcblx0Y29uc29sZS5sb2coaSk7XG59Il19
