@@ -16,6 +16,12 @@ var lessAutoprefix = new LessAutoprefix({
     browsers: ['last 2 versions']
 });
 
+// Handlebars plugins
+var handlebars = require('gulp-handlebars');
+var handlebarsLib = require('handlebars');
+var declare = require('gulp-declare');
+var wrap = require('gulp-wrap');
+
 // File paths
 var DIST_PATH = 'public/dist';
 var SCRIPTS_PATH = 'public/scripts/**/*.js';
