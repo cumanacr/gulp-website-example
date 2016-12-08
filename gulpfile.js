@@ -111,7 +111,7 @@ gulp.task('images', function() {
 });
 
 // Templates
-gulp.task('templates', function(){
+gulp.task('templates', function() {
     console.log('starting templates task');
     return gulp.src(TEMPLATES_PATH)
         .pipe(handlebars({
@@ -127,11 +127,11 @@ gulp.task('templates', function(){
         .pipe(livereload())
 });
 
-gulp.task('default', function() {
+gulp.task('default', ['images', 'templates', 'styles', 'scripts'], function() {
     console.log('Starting default task');
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', ['default'], function() {
     console.log('Starting watch task');
     require('./server.js');
     livereload.listen();
